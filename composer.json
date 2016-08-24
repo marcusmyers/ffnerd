@@ -1,6 +1,6 @@
 {
-  "name": "nflanalysis",
-  "description": "A command line utility for analyzing nfl stats",
+  "name": "ffnerd",
+  "description": "A command line utility to work with Fantasy Football Nerd's API",
   "require": {
     "symfony/console": "3.1.0",
     "guzzlehttp/guzzle": "6.2.0",
@@ -17,7 +17,7 @@
     ]
   },
   "bin": [
-    "nflanalysis"
+    "ffnerd"
     ]
 }
 

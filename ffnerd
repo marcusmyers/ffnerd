@@ -14,5 +14,6 @@ $dotenv->load();
 $app = new Application('NFL Analysis command utility','1.0');
 
 $app->add(new Mox\Commands\WeatherCommand());
+$app->add(new Mox\Commands\NFLTeamsCommand());
 
 $app->run();
