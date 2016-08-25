@@ -1,0 +1,65 @@
+<?php namespace Mox\Models;
+
+class Game {
+  protected $fillable = [
+         "gameWeek",
+         "gameDate",
+         "awayTeam",
+         "homeTeam",
+         "gameTimeET",
+         "tvStation",
+         "winner"
+       ];
+
+  private $attributes = [];
+  public function __construct(Array $attr = []) {
+    if(!empty($attr)){
+      foreach($attr as $key=>$value)
+      {
+        if(in_array($key, $this->fillable)) {
+          $this->{$key} = $value;
+        }
+      }
+    }
+  }
+
+  public function __set($key, $value)
+  {
+    $this->attributes[$key] = $value;
+  }
+
+  public function __get($key)
+  {
+    if(array_key_exists($key, $this->attributes)){
+      return $this->attributes[$key];
+    }
+    $trace = debug_backtrace();
+    trigger_error(
+      'Undefined property via __get(): ' . $key .
+      ' in ' . $trace[0]['file'] .
+      ' on line ' . $trace[0]['line'],
+      E_USER_NOTICE);
+    return null;
+  }
+
+  public function toOutputArray()
+  {
+    $arrFormat = [
+      $this->gameWeek,
+      $this->awayTeam,
+      $this->homeTeam,
+      $this->_formatDate($this->gameDate),
+      $this->gameTimeET,
+      $this->tvStation,
+      $this->winner
+    ];
+
+    return $arrFormat;
+  }
+
+  private function _formatDate($date)
+  {
+    list($year, $m, $d) = explode('-', $date);
+    return "$m/$d/$year";
+  }
+}

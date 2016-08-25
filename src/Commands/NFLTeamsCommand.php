@@ -27,7 +27,7 @@ class NFLTeamsCommand extends Command {
     $table->setHeaders($headers);
     $nflteams = file_get_contents('nflteams.json');
     $league = json_decode($nflteams, TRUE)['NFLTeams'];
-    if($team != ''){
+    if(!empty($team)){
       $table->setRows([$this->_getTeam($league, $team)])
         ->render();
     } else {
