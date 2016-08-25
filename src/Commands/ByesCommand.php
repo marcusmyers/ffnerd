@@ -28,7 +28,7 @@ class ByesCommand extends Command {
     $byeweeks = file_get_contents('byes.json');
     $byes = json_decode($byeweeks, TRUE);
 
-    if($week != '') {
+    if(!empty($week)) {
       $table->setRows($this->_getByeWeeksOutputArray($byes, $week))
         ->render();
     } else {
@@ -40,7 +40,7 @@ class ByesCommand extends Command {
   private function _getByeWeeksOutputArray(Array $byes, String $search = '')
   {
     $arrReturn = [];
-    if($search != '') {
+    if(!empty($search)) {
       foreach($byes as $key=>$value){
         if("Bye Week $search" == $key) {
           $arrReturn = array_merge($arrReturn, $this->_getByeWeekGameData($value));
