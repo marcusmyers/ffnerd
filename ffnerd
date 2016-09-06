@@ -17,5 +17,7 @@ $app->add(new Mox\Commands\WeatherCommand());
 $app->add(new Mox\Commands\NFLTeamsCommand());
 $app->add(new Mox\Commands\ByesCommand());
 $app->add(new Mox\Commands\ScheduleCommand());
+$app->add(new Mox\Commands\Players\PlayersCommand());
+$app->add(new Mox\Commands\Players\PositionCommand());
 
 $app->run();

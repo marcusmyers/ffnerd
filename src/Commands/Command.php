@@ -28,4 +28,25 @@ class Command extends SymfonyCommand {
   public static function getFFNServiceUrl() {
     return self::FFN_SERVICE_URL;
   }
+
+  public static function map(Array $items, $func) {
+    $result = [];
+
+    foreach($items as $item) {
+      $result[] = $func($item);
+    }
+
+    return $result;
+  }
+
+  public static function filter(Array $items, $func, $search='') {
+    $result = [];
+
+    foreach($items as $item) {
+      if ($func($item, $search)) {
+        $result[] = $item;
+      }
+    }
+    return $result;
+  }
 }

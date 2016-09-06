@@ -5,7 +5,7 @@ use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-use Mox\Models\Game as Game;
+use Mox\Models\Game;
 
 class ScheduleCommand extends Command {
   public function __construct()
@@ -32,43 +32,33 @@ class ScheduleCommand extends Command {
     $table->setHeaders($headers);
     $schedule_data = file_get_contents('schedule.json');
     $arrScheduleData = json_decode($schedule_data, TRUE);
-    $schedules = $arrScheduleData['Schedule'];
+    $schedules = self::map($arrScheduleData['Schedule'], function($schedule) {
+      return new Game($schedule);
+    });
     $currentWeek = $arrScheduleData['currentWeek'];
     if(!empty($week) || !$full){
       $week = $currentWeek;
-      $table->setRows($this->_getScheduleFormattedArray($schedules, $week))
+      $filter = self::filter($schedules, function($game, $week) {
+        return $game->gameWeek == $week;
+      }, $week);
+      $table->setRows(self::map($filter, function($game) {
+        return $game->toOutputArray();
+      }))
         ->render();
     } elseif(!empty($team)){
-      $table->setRows($this->_getScheduleFormattedArray($schedules, $team))
+      $filter = self::filter($schedules, function($game, $team) {
+        return $game->awayTeam == $team || $game->homeTeam == $team;
+      }, $team);
+      $table->setRows(self::map($filter, function($game) {
+        return $game->toOutputArray();
+      }
+      ))
         ->render();
     } else {
-      $table->setRows($this->_getScheduleFormattedArray($schedules))
+      $table->setRows(self::map($schedules, function($game) {
+        return $game->toOutputArray();
+      }))
         ->render();
     }
-  }
-
-  private function _getScheduleFormattedArray(Array $schedules, String $search = '')
-  {
-    $arrGames = [];
-    if(!empty($search)) {
-      foreach($schedules as $schedule)
-      {
-        if($schedule['gameWeek'] == $search){
-          $game = new Game($schedule);
-          $arrGames[] = $game->toOutputArray();
-        }
-        if($schedule['awayTeam'] == $search || $schedule['homeTeam'] == $search) {
-          $game = new Game($schedule);
-          $arrGames[] = $game->toOutputArray();
-        }
-      }
-    } else {
-      foreach($schedules as $schedule)
-      {
-        $game = new Game($schedule);
-        $arrGames[] = $game->toOutputArray();
-      }
-    }
-    return $arrGames;
   }
 }
