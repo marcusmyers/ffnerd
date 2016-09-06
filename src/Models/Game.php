@@ -1,6 +1,6 @@
 <?php namespace Mox\Models;
 
-class Game {
+class Game extends Model{
   protected $fillable = [
          "gameWeek",
          "gameDate",
@@ -8,10 +8,15 @@ class Game {
          "homeTeam",
          "gameTimeET",
          "tvStation",
-         "winner"
+         "winner",
+         "forecast",
+         "low",
+         "high",
+         "isDome"
        ];
 
   private $attributes = [];
+
   public function __construct(Array $attr = []) {
     if(!empty($attr)){
       foreach($attr as $key=>$value)
@@ -42,24 +47,46 @@ class Game {
     return null;
   }
 
+  public function outputDome()
+  {
+    if($this->isDome == 1) {
+      return 'Yes';
+    } else {
+      return 'No';
+    }
+  }
+
   public function toOutputArray()
   {
     $arrFormat = [
       $this->gameWeek,
       $this->awayTeam,
       $this->homeTeam,
-      $this->_formatDate($this->gameDate),
+      $this->formatDate($this->gameDate),
       $this->gameTimeET,
       $this->tvStation,
-      $this->winner
+      $this->winner,
     ];
 
     return $arrFormat;
   }
 
-  private function _formatDate($date)
+  public function toWeatherOutputArray()
   {
-    list($year, $m, $d) = explode('-', $date);
-    return "$m/$d/$year";
+    $arrFormat = [
+      $this->gameWeek,
+      $this->awayTeam,
+      $this->homeTeam,
+      $this->formatDate($this->gameDate),
+      $this->gameTimeET,
+      $this->tvStation,
+      $this->winner,
+      $this->forecast,
+      $this->low,
+      $this->high,
+      $this->outputDome()
+    ];
+
+    return $arrFormat;
   }
 }
