@@ -1,19 +1,18 @@
 <?php namespace Tests\Mox\Commands;
 
-use Mox\Commands\WeatherCommand;
-use Mox\Models\Game;
+use Mox\Commands\ByesCommand;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 
-class WeatherCommandTest extends \PHPUnit_Framework_TestCase
+class ByesCommandTest extends \PHPUnit_Framework_TestCase
 {
   public function testTableHeadersAreSetCorrectly()
   {
     $application = new Application();
 
-    $application->add(new WeatherCommand);
+    $application->add(new ByesCommand);
 
-    $command = $application->find('weather');
+    $command = $application->find('byes');
     $commandTester = new CommandTester($command);
     $commandTester->execute(array(
       'command'  => $command->getName(),
@@ -27,21 +26,25 @@ class WeatherCommandTest extends \PHPUnit_Framework_TestCase
 
     //the output of the command in the console
     $output = $commandTester->getDisplay();
-    $this->assertContains('| Week | Away | Home | Date       | Time     | Station | Winner | Forecast                | Low | High | Dome |', $output);
+    $this->assertContains('| Week | Team                 |', $output);
   }
 
   public function testTableDataSetCorrectly()
   {
     $application = new Application();
-    $application->add(new WeatherCommand);
 
-    $command = $application->find('weather');
+    $application->add(new ByesCommand);
+
+    $command = $application->find('byes');
     $commandTester = new CommandTester($command);
     $commandTester->execute(array(
-      'command' => $command->getName(),
+      'command'  => $command->getName(),
     ));
 
+    //the output of the command in the console
     $output = $commandTester->getDisplay();
-    $this->assertContains('| 1    | LA   | SF   | 09/12/2016 | 10:20 PM | ESPN    |        | Mostly Sunny            | 58  | 76   | No   |', $output);
+    $this->assertContains('| 13   | Cleveland Browns     |', $output);
   }
+
+
 }

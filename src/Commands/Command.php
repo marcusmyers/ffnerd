@@ -49,4 +49,15 @@ class Command extends SymfonyCommand {
     }
     return $result;
   }
+
+  public static function filterArray(Array $items, $func, $search) {
+    $result = [];
+
+    foreach($items as $key=>$val){
+      if ($func($search, $val)) {
+        $result[] = $items[$key];
+      }
+    }
+    return $result;
+  }
 }

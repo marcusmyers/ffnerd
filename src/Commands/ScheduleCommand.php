@@ -36,8 +36,7 @@ class ScheduleCommand extends Command {
       return new Game($schedule);
     });
     $currentWeek = $arrScheduleData['currentWeek'];
-    if(!empty($week) || !$full){
-      $week = $currentWeek;
+    if(!empty($week)){
       $filter = self::filter($schedules, function($game, $week) {
         return $game->gameWeek == $week;
       }, $week);
@@ -54,8 +53,17 @@ class ScheduleCommand extends Command {
       }
       ))
         ->render();
-    } else {
+    } elseif(!$full) {
       $table->setRows(self::map($schedules, function($game) {
+        return $game->toOutputArray();
+      }))
+        ->render();
+    } else {
+      $week = $currentWeek;
+      $filter = self::filter($schedules, function($game, $week) {
+        return $game->gameWeek == $week;
+      }, $week);
+      $table->setRows(self::map($filter, function($game) {
         return $game->toOutputArray();
       }))
         ->render();
