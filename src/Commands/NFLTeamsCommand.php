@@ -28,19 +28,13 @@ class NFLTeamsCommand extends Command {
     $nflteams = file_get_contents('nflteams.json');
     $league = json_decode($nflteams, TRUE)['NFLTeams'];
     if(!empty($team)){
-      $table->setRows([$this->_getTeam($league, $team)])
+      $table->setRows(self::filterArray($league, function($team, $teams){
+        return in_array($team, $teams);
+      }, $team))
         ->render();
     } else {
       $table->setRows($league)
         ->render();
-    }
-  }
-
-  private function _getTeam($teams, $search) {
-    foreach($teams as $key=>$val){
-      if(in_array($search, $val)){
-        return $teams[$key];
-      }
     }
   }
 }
