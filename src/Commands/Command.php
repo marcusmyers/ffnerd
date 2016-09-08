@@ -21,6 +21,15 @@ class Command extends SymfonyCommand {
     parent::__construct();
   }
 
+  public function getDataDir()
+  {
+    if(getenv("APP_ENV") == "testing"){
+      return "test-data";
+    } else {
+      return "cache";
+    }
+  }
+
   public static function getNFLScheduleUrl($year, $week, $seasonType) {
     return self::NFL_SCHEDULE_URL . "season=$year&seasonType=$seasonType&week=$week";
   }

@@ -25,7 +25,7 @@ class NFLTeamsCommand extends Command {
     $table = new Table($output);
     $headers = ['Abbr', 'Full Name', 'Short Name'];
     $table->setHeaders($headers);
-    $nflteams = file_get_contents('nflteams.json');
+    $nflteams = file_get_contents($this->getDataDir().'/nflteams.json');
     $league = json_decode($nflteams, TRUE)['NFLTeams'];
     if(!empty($team)){
       $table->setRows(self::filterArray($league, function($team, $teams){
