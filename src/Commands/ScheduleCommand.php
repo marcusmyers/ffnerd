@@ -30,7 +30,7 @@ class ScheduleCommand extends Command {
     $table = new Table($output);
     $headers = ['Week', 'Away', 'Home', 'Date', 'Time', 'Station', 'Winner'];
     $table->setHeaders($headers);
-    $schedule_data = file_get_contents('schedule.json');
+    $schedule_data = file_get_contents($this->getDataDir().'/schedule.json');
     $arrScheduleData = json_decode($schedule_data, TRUE);
     $schedules = self::map($arrScheduleData['Schedule'], function($schedule) {
       return new Game($schedule);

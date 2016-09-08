@@ -22,7 +22,7 @@ class PlayersCommand extends Command {
 
   public function execute(InputInterface $input, OutputInterface $output)
   {
-    $playersData = file_get_contents('players.json');
+    $playersData = file_get_contents($this->getDataDir().'/players.json');
     $arrPlayersData = json_decode($playersData, TRUE);
     $headers = [ 'Jersey', 'Name', 'Team', 'Position', 'Height', 'Weight', 'DOB', 'College' ];
     $table = new Table($output);

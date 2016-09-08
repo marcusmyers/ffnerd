@@ -28,7 +28,7 @@ class WeatherCommand extends Command {
 
     // echo $res->getBody();
     $table = new Table($output);
-    $weeksWeatherData = file_get_contents('weather.json');
+    $weeksWeatherData = file_get_contents($this->getDataDir().'/weather.json');
     $weatherData = json_decode($weeksWeatherData, TRUE);
     $gameWeek = $weatherData['Week'];
     $games = $weatherData['Games'];

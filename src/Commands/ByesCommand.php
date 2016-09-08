@@ -25,7 +25,7 @@ class ByesCommand extends Command {
     $table = new Table($output);
     $headers = ['Week', 'Team'];
     $table->setHeaders($headers);
-    $byeweeks = file_get_contents('byes.json');
+    $byeweeks = file_get_contents($this->getDataDir().'/byes.json');
     $byes = json_decode($byeweeks, TRUE);
 
     if(!empty($week)) {
