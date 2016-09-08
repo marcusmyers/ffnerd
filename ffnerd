@@ -20,5 +20,6 @@ $app->add(new Mox\Commands\ScheduleCommand());
 $app->add(new Mox\Commands\Players\PlayersCommand());
 $app->add(new Mox\Commands\Players\PositionCommand());
 $app->add(new Mox\Commands\AuctionValuesCommand());
+$app->add(new Mox\Commands\DraftRankingsCommand());
 
 $app->run();
