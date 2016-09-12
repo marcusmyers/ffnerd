@@ -1,4 +1,4 @@
-<?php namespace Mox\Commands;
+<?php namespace Mox\Commands\Draft;
 
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Helper\Table;
@@ -6,8 +6,9 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Mox\Models\DraftRank;
+use Mox\Commands\Command as Command;
 
-class DraftRankingsCommand extends Command {
+class RankingsCommand extends Command {
   public function __construct()
   {
     parent::__construct();

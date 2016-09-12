@@ -1,16 +1,16 @@
-<?php namespace Tests\Mox\Commands;
+<?php namespace Tests\Mox\Commands\Draft;
 
-use Mox\Commands\DraftRankingsCommand;
+use Mox\Commands\Draft\RankingsCommand;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 
-class DraftRankingsCommandTest extends \PHPUnit_Framework_TestCase
+class RankingsCommandTest extends \PHPUnit_Framework_TestCase
 {
   public function testTableHeadersAreSetCorrectly()
   {
     $application = new Application();
 
-    $application->add(new DraftRankingsCommand);
+    $application->add(new RankingsCommand);
 
     $command = $application->find('draft:rankings');
     $commandTester = new CommandTester($command);
@@ -31,7 +31,7 @@ class DraftRankingsCommandTest extends \PHPUnit_Framework_TestCase
   {
      $application = new Application();
 
-    $application->add(new DraftRankingsCommand);
+    $application->add(new RankingsCommand);
 
     $command = $application->find('draft:rankings');
     $commandTester = new CommandTester($command);
@@ -53,7 +53,7 @@ class DraftRankingsCommandTest extends \PHPUnit_Framework_TestCase
   {
      $application = new Application();
 
-    $application->add(new DraftRankingsCommand);
+    $application->add(new RankingsCommand);
 
     $command = $application->find('draft:rankings');
     $commandTester = new CommandTester($command);
