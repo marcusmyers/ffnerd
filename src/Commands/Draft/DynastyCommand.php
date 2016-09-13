@@ -8,7 +8,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Mox\Commands\Command as Command;
 use Mox\Models\IDPDynasty;
 
-class ProjectionsIDPCommand extends Command {
+class DynastyCommand extends Command {
   public function __construct()
   {
     parent::__construct();
@@ -16,8 +16,8 @@ class ProjectionsIDPCommand extends Command {
 
   public function configure()
   {
-    $this->setName('draft:projections:idp')
-      ->setDescription('Get list of draft projections for individual defensive player');
+    $this->setName('draft:dynasty')
+      ->setDescription('Get list of draft projections for dynasty drafts');
   }
 
   public function execute(InputInterface $input, OutputInterface $output)
@@ -25,9 +25,9 @@ class ProjectionsIDPCommand extends Command {
     $table = new Table($output);
     $headers = ['Rank', 'Name', 'Team', 'Position', 'Bye Week'];
     $table->setHeaders($headers);
-    $data = file_get_contents($this->getDataDir().'/draft-idp.json');
-    $dataIDP = json_decode($data, TRUE);
-    $table->setRows(self::map($dataIDP['DraftIDP'], function ($draftplayer){
+    $data = file_get_contents($this->getDataDir().'/dynasty.json');
+    $dataDynasty = json_decode($data, TRUE);
+    $table->setRows(self::map($dataDynasty['Dynasty'], function ($draftplayer){
       $idp = new IDPDynasty($draftplayer);
       return $idp->toOutputArray();
     }));

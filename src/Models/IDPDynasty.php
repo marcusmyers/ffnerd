@@ -1,6 +1,6 @@
 <?php namespace Mox\Models;
 
-class IDP extends Player {
+class IDPDynasty extends Player {
   protected $stats = [
     "rank",
     "player",
