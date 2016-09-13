@@ -12,7 +12,8 @@ class Player extends Model {
     "height",
     "weight",
     "dob",
-    "college"
+    "college",
+    "tier"
   ];
 
   private $attributes = [];
@@ -45,6 +46,18 @@ class Player extends Model {
       ' on line ' . $trace[0]['line'],
       E_USER_NOTICE);
     return null;
+  }
+
+  public function toOutputArrayForTiers()
+  {
+    $arrFormat = [
+      $this->displayName,
+      $this->team,
+      $this->position,
+      $this->tier
+    ];
+
+    return $arrFormat;
   }
 
   public function toOutputArray()

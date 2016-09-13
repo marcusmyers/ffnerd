@@ -32,5 +32,6 @@ $app->add(new Mox\Commands\Draft\ProjectionsWRCommand());
 $app->add(new Mox\Commands\Draft\ProjectionsTECommand());
 $app->add(new Mox\Commands\Draft\ProjectionsKCommand());
 $app->add(new Mox\Commands\Draft\ProjectionsDEFCommand());
+$app->add(new Mox\Commands\Players\TiersCommand());
 
 $app->run();
