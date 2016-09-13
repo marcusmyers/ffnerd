@@ -24,6 +24,7 @@ $app->add(new Mox\Commands\Players\PositionWRCommand());
 $app->add(new Mox\Commands\Players\PositionTECommand());
 $app->add(new Mox\Commands\Players\PositionKCommand());
 $app->add(new Mox\Commands\Players\PositionDEFCommand());
+$app->add(new Mox\Commands\Players\TiersCommand());
 $app->add(new Mox\Commands\AuctionValuesCommand());
 $app->add(new Mox\Commands\Draft\RankingsCommand());
 $app->add(new Mox\Commands\Draft\ProjectionsQBCommand());
@@ -32,6 +33,6 @@ $app->add(new Mox\Commands\Draft\ProjectionsWRCommand());
 $app->add(new Mox\Commands\Draft\ProjectionsTECommand());
 $app->add(new Mox\Commands\Draft\ProjectionsKCommand());
 $app->add(new Mox\Commands\Draft\ProjectionsDEFCommand());
-$app->add(new Mox\Commands\Players\TiersCommand());
+$app->add(new Mox\Commands\Draft\ProjectionsIDPCommand());
 
 $app->run();
