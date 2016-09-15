@@ -34,5 +34,11 @@ $app->add(new Mox\Commands\Draft\ProjectionsTECommand());
 $app->add(new Mox\Commands\Draft\ProjectionsKCommand());
 $app->add(new Mox\Commands\Draft\ProjectionsDEFCommand());
 $app->add(new Mox\Commands\Draft\ProjectionsIDPCommand());
+$app->add(new Mox\Commands\Rankings\WeeklyQBCommand());
+$app->add(new Mox\Commands\Rankings\WeeklyWRCommand());
+$app->add(new Mox\Commands\Rankings\WeeklyRBCommand());
+$app->add(new Mox\Commands\Rankings\WeeklyTECommand());
+$app->add(new Mox\Commands\Rankings\WeeklyKCommand());
+$app->add(new Mox\Commands\Rankings\WeeklyDEFCommand());
 
 $app->run();
