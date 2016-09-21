@@ -40,5 +40,11 @@ $app->add(new Mox\Commands\Rankings\WeeklyRBCommand());
 $app->add(new Mox\Commands\Rankings\WeeklyTECommand());
 $app->add(new Mox\Commands\Rankings\WeeklyKCommand());
 $app->add(new Mox\Commands\Rankings\WeeklyDEFCommand());
+$app->add(new Mox\Commands\Projections\WeeklyQBCommand());
+$app->add(new Mox\Commands\Projections\WeeklyRBCommand());
+$app->add(new Mox\Commands\Projections\WeeklyWRCommand());
+$app->add(new Mox\Commands\Projections\WeeklyTECommand());
+$app->add(new Mox\Commands\Projections\WeeklyKCommand());
+$app->add(new Mox\Commands\Projections\WeeklyDEFCommand());
 
 $app->run();

@@ -1,7 +1,7 @@
 <?php namespace Mox\Models;
 
 class Weekly extends Player {
-  protected $qbstats = [
+  protected $stats = [
     "week",
     "name",
     "standard",
@@ -20,7 +20,7 @@ class Weekly extends Player {
 
   public function __construct(Array $attr = [])
   {
-    $this->fillable = array_merge($this->fillable, $this->qbstats);
+    $this->fillable = array_merge($this->fillable, $this->stats);
     if(!empty($attr)) {
       foreach($attr as $key=>$value) {
         if(in_array($key, $this->fillable)) {
