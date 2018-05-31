@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2f6688f62a0e73e67fcf5d870e72f6a9",
+    "content-hash": "c9e9230cfcf0076e77eef7b7fef7726f",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1162,16 +1162,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v4.0.11",
+            "version": "v4.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "a54fa082103acd599b7d5de9204dc1f4aa8a5615"
+                "reference": "58261043876feb695640457c5675bb331a6eb3b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/a54fa082103acd599b7d5de9204dc1f4aa8a5615",
-                "reference": "a54fa082103acd599b7d5de9204dc1f4aa8a5615",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/58261043876feb695640457c5675bb331a6eb3b7",
+                "reference": "58261043876feb695640457c5675bb331a6eb3b7",
                 "shasum": ""
             },
             "require": {
@@ -1226,6 +1226,7 @@
                 "symfony/intl": "self.version",
                 "symfony/ldap": "self.version",
                 "symfony/lock": "self.version",
+                "symfony/messenger": "self.version",
                 "symfony/monolog-bridge": "self.version",
                 "symfony/options-resolver": "self.version",
                 "symfony/process": "self.version",
@@ -1272,7 +1273,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.0-dev"
+                    "dev-master": "4.1-dev"
                 }
             },
             "autoload": {
@@ -1310,7 +1311,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2018-05-25T14:03:56+00:00"
+            "time": "2018-05-30T12:52:50+00:00"
         },
         {
             "name": "twig/twig",
