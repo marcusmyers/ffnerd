@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4d6de2d07e2a7c41bee07001e2796b97",
+    "content-hash": "efc797ea2b27828d0c11ac17bcb87b1b",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1188,7 +1188,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "BackEndTea@gmail.com"
+                    "email": "backendtea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
@@ -1603,16 +1603,16 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v3.1.0",
+            "version": "v3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "bf58b9c61ba37ef1deaa29fe5dbb30222c948541"
+                "reference": "13be13df7df1ba7bca099b16943a8ba025a38a02"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/bf58b9c61ba37ef1deaa29fe5dbb30222c948541",
-                "reference": "bf58b9c61ba37ef1deaa29fe5dbb30222c948541",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/13be13df7df1ba7bca099b16943a8ba025a38a02",
+                "reference": "13be13df7df1ba7bca099b16943a8ba025a38a02",
                 "shasum": ""
             },
             "require": {
@@ -1650,7 +1650,7 @@
                 "env",
                 "environment"
             ],
-            "time": "2019-01-04T23:43:30+00:00"
+            "time": "2019-01-23T18:32:42+00:00"
         }
     ],
     "packages-dev": [
