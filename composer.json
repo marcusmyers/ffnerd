@@ -2,7 +2,7 @@
   "name": "ffnerd",
   "description": "A command line utility to work with Fantasy Football Nerd's API",
   "require": {
-    "symfony/symfony": "4.2.12",
+    "symfony/symfony": "5.1.0",
     "guzzlehttp/guzzle": "6.5.3",
     "vlucas/phpdotenv": "4.1.4"
   },
