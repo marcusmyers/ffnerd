@@ -3,7 +3,7 @@
   "description": "A command line utility to work with Fantasy Football Nerd's API",
   "require": {
     "symfony/symfony": "5.1.5",
-    "guzzlehttp/guzzle": "7.0.1",
+    "guzzlehttp/guzzle": "7.1.1",
     "vlucas/phpdotenv": "5.2.0"
   },
   "require-dev": {
