@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ec01fcdded77b68b7084a15fbff3ed8e",
+    "content-hash": "842a02f2040725511b0c8c5e6439fa41",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1332,16 +1332,16 @@
         },
         {
             "name": "symfony/contracts",
-            "version": "v2.1.3",
+            "version": "v2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/contracts.git",
-                "reference": "64342f7faf49d26a959ea223f83170f00d9699c7"
+                "reference": "571c933d161fd0985e37b9504878a125aa098591"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/contracts/zipball/64342f7faf49d26a959ea223f83170f00d9699c7",
-                "reference": "64342f7faf49d26a959ea223f83170f00d9699c7",
+                "url": "https://api.github.com/repos/symfony/contracts/zipball/571c933d161fd0985e37b9504878a125aa098591",
+                "reference": "571c933d161fd0985e37b9504878a125aa098591",
                 "shasum": ""
             },
             "require": {
@@ -1371,7 +1371,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.1-dev"
+                    "dev-master": "2.3-dev"
                 }
             },
             "autoload": {
@@ -1423,7 +1423,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-07-29T14:54:40+00:00"
+            "time": "2020-09-29T22:43:35+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -2283,16 +2283,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v5.1.5",
+            "version": "v5.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "31b6a95fc288617ccfa27aa819d30c0c2201416a"
+                "reference": "ccdb43327902ecdfa497c47fa6e165b5ae32fb43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/31b6a95fc288617ccfa27aa819d30c0c2201416a",
-                "reference": "31b6a95fc288617ccfa27aa819d30c0c2201416a",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/ccdb43327902ecdfa497c47fa6e165b5ae32fb43",
+                "reference": "ccdb43327902ecdfa497c47fa6e165b5ae32fb43",
                 "shasum": ""
             },
             "require": {
@@ -2476,7 +2476,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-09-02T08:15:35+00:00"
+            "time": "2020-10-04T07:57:45+00:00"
         },
         {
             "name": "twig/twig",
